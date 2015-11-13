@@ -4,15 +4,16 @@
 		  <div class="container">
 		    <div class="btn-group btn-group-justified" role="group" aria-label="...">
 		  <div class="btn-group" role="group">
-		    <button type="button" class="btn btn-default">我的发布 <span class="badge">3</span></button>
+		    <button type="button" id="btncreate" name="btncreate" class="btn btn-default">我的发布 <span class="badge">3</span></button>
 		  </div>
 		  <div class="btn-group" role="group">
-		      <button type="button" class="btn btn-default">我的参与 <span class="badge">2</span></button>
+		      <button type="button" id="btnappoint" name="btnappoint" class="btn btn-default">我的参与 <span class="badge">2</span></button>
 		  </div>
 		  <div class="btn-group" role="group">
-		    <button type="button" class="btn btn-default">关于</button>
+		    <button type="button" id="btnabout" name="btnabout" class="btn btn-default">关于</button>
 		  </div>
 		</div>
 		  </div>
 		</nav>
+		<br>
 </div>

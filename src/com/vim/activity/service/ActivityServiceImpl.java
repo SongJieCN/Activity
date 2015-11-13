@@ -26,7 +26,11 @@ public class ActivityServiceImpl implements ActivityService {
 	@Override
 	public Activity createNewActivity(Activity act) {
 		// TODO Auto-generated method stub
-		activitydao.insert(act);
+		try{
+			activitydao.insert(act);
+		}catch(Exception ex){
+			ex.printStackTrace();
+		}
 		
 		return act;
 	}

@@ -47,17 +47,30 @@ public class HomeController {
 	@RequestMapping(value="index-create",method = RequestMethod.POST,
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
-	public ModelAndView createAct(Activity act){
+	public ModelAndView createAct(@RequestBody Activity act){
 		
 		HttpServletRequest request = ((ServletRequestAttributes)RequestContextHolder.getRequestAttributes()).getRequest();
-		
-		String place = request.getParameter("txtPlace");
-		
+		act.setId(System.currentTimeMillis());
+		 activitySrv.createNewActivity(act);
+		 
+		 
+  
+        return null;
+	}
+	
+	@RequestMapping("mycreate")
+	public ModelAndView myCreate(){
+	    Map<String, Object> map = new HashMap<String, Object>(); 
+		try{
 		List<Activity> acts = activitySrv.getNewActivities();
-	    Map<String, Object> map = new HashMap<String, Object>();  
+ 
   
         map.put("result", acts);  
+		}catch(Exception ex){
+			ex.printStackTrace();
+		}
   
-        return new ModelAndView("index", map); 
+
+		return new ModelAndView("mycreate", map); 
 	}
 }

@@ -21,9 +21,9 @@ public class Activity implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@JsonIgnore
 	private long id;
-	@JsonIgnore
+	@JsonProperty("comment")
 	private String comment;
-	@JsonIgnore
+	@JsonProperty("content")
 	private String content;
 	@JsonIgnore
 	private Timestamp createdtime;
@@ -33,12 +33,14 @@ public class Activity implements Serializable {
 	private Timestamp enddate;
 	@JsonIgnore
 	private byte[] imgtopic;
-	@JsonIgnore
+	@JsonProperty("price")
 	private float price;
 	@JsonIgnore
 	private Timestamp startdate;
 	@JsonProperty("topic")
 	private String topic;
+	@JsonProperty("place")
+	private String place;
 	@JsonIgnore
 	private int type;
 	@JsonIgnore

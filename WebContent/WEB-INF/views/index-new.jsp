@@ -19,33 +19,30 @@
 
 <script type="text/javascript"
 	src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-	
-	<script type="text/javascript"
+
+<script type="text/javascript"
 	src='<c:url value="/resources/js/index-new.js"></c:url>'></script>
-	
+
 <script type="text/javascript"
 	src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
 <script type="text/javascript"
-	src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js">
+	src='<c:url value="/resources/bootstrap/js/bootstrap-datetimepicker.js"></c:url>'></script>
 	
-</script>
-<script type="text/javascript"
-	src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.pt-BR.js">
+	<link rel="stylesheet" href='<c:url value="/resources/bootstrap/css/bootstrap-datetimepicker.css"></c:url>'>
 	
-</script>
 
 <title>创建活动</title>
 </head>
 <body style="background-color: #F5F5F5;">
 	<form name="subform" id="subform">
-		<div class="input-group" style="margin-top: 5px;">
-			<span class="input-group-addon">主题: </span> <input type="text"
-				class="form-control" aria-label="Amount (to the nearest dollar)" name="topic" id="topic"><span
-				class="glyphicon glyphicon-plus" aria-hidden="true" name="spanTopic" id="spanTopic"></span>
+		<div class="input-group" style="margin-top: 5px; background-color:white;">
+			<span class="input-group-addon">主  题: </span> <input type="text"
+				class="form-control" aria-label="Amount (to the nearest dollar)"
+				name="topic" id="topic"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 		</div>
 		<div class="input-group" style="margin-top: 5px;">
-			<span class="input-group-addon">内容: </span>
+			<span class="input-group-addon">内  容: </span>
 			<textarea class="form-control" rows="6" name="content" id="content"></textarea>
 		</div>
 
@@ -56,56 +53,34 @@
 		</div>
 
 		<div class="input-group" style="margin-top: 5px;">
-			<span class="input-group-addon">开始时间: </span> <input type="datetime"
-				class="form-control" aria-label="Amount (to the nearest dollar)" name=""starttime" id="starttime">
+			<span class="input-group-addon">开始时间: </span> <input size="16"
+				type="text" value="2012-06-15 14:45" id="startdate" name="startdate" class="form-control form_datetime">
+
+			<script type="text/javascript">
+				$(".form_datetime").datetimepicker({
+					format : 'yyyy-mm-dd hh:ii'
+				});
+			</script>
 		</div>
 
 		<div class="input-group" style="margin-top: 5px;">
-			<span class="input-group-addon">结束时间: </span> <input type="datetime"
-				class="form-control" aria-label="Amount (to the nearest dollar)" name="endtime" id="endtime">
+			<span class="input-group-addon">结束时间: </span> <input size="16"
+				type="text" value="2012-06-15 14:45" id="enddate" name="enddate" class="form-control form_datetime1">
+
+			<script type="text/javascript">
+				$(".form_datetime1").datetimepicker({
+					format : 'yyyy-mm-dd hh:ii'
+				});
+			</script>
 		</div>
 		<div class="input-group" style="margin-top: 5px;">
 			<span class="input-group-addon">费用: </span> <input type="text"
-				class="form-control" aria-label="Amount (to the nearest dollar)" name="price" id="price">
+				class="form-control" aria-label="Amount (to the nearest dollar)"
+				name="price" id="price">
 		</div>
 		<div class="input-group" style="margin-top: 5px;">
 			<span class="input-group-addon">备注: </span>
 			<textarea class="form-control" rows="3" name="comment" id="comment"></textarea>
-		</div>
-
-		<div class="container">
-			<div class="row">
-				<div class='col-sm-6'>
-					<div class="form-group">
-						<div class='input-group date' id='datetimepicker1'>
-							<input type='text' class="form-control" /> <span
-								class="input-group-addon"> <span
-								class="glyphicon glyphicon-calendar"></span>
-							</span>
-						</div>
-					</div>
-				</div>
-				<script type="text/javascript">
-					$(function() {
-						$('#datetimepicker1').datetimepicker();
-					});
-				</script>
-			</div>
-		</div>
-
-		<div class="container">
-			<div class="row">
-				<div class='col-sm-6'>
-					<div class="form-group">
-						<div class='input-group date' id='datetimepicker2'>
-							<input type='text' class="form-control" /> <span
-								class="input-group-addon"> <span
-								class="glyphicon glyphicon-calendar"></span>
-							</span>
-						</div>
-					</div>
-				</div>
-			</div>
 		</div>
 
 	</form>
